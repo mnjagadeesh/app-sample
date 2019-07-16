@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Creates static directory
+      file:
+        path: static
+        state: directory
+
+    - name: Creates static/images directory
+      file:
+        path: static/images
+        state: directory
+ 
+    - name: pull from git
+      command: git submodule add git@github.com:mnjagadeesh/css static/css
